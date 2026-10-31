@@ -1,6 +1,8 @@
 # Understanding outcomes
 
-Every run ends in one of four outcomes.
+The contract defines **five** possible outcome statuses in its
+[Outcome vocabulary](../../contract.md#outcomes). A run may be suspended while
+waiting for an external step, so not every run has a final outcome yet.
 
 | Outcome     | Meaning                                                         |
 | ----------- | --------------------------------------------------------------- |
@@ -8,7 +10,8 @@ Every run ends in one of four outcomes.
 | `abstained` | The agent declined to answer rather than guess.                 |
 | `referred`  | The matter needs a person's judgement.                          |
 | `failed`    | The run did not complete, or a check failed.                    |
+| `suspended` | The run is waiting for something outside the harness.          |
 
-The app shows, with each outcome, what it means and what to do next.
-
-TODO(#250): link to the outcome vocabulary in the contract once the reference pages are settled.
+The app shows, with each outcome, what it means and what to do next. The contract specifies
+which statuses carry a payload or a problem; in the current implementation `suspended` is not
+yet produced (see the [contract](../../contract.md#outcomes)).
